@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pesona Alam Lestari | Wisata Alam</title>
+    <!-- Font Awesome untuk ikon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+        }
+
+        body {
+            background-color: #f5f9f0;
+            color: #2c3e2c;
+            line-height: 1.6;
+        }
+
+        /* ===== HEADER & NAVIGASI ===== */
+        header {
+            background: linear-gradient(135deg, #1e3c1e, #2e7d32);
+            color: white;
+            padding: 1.2rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo h1 {
+            font-size: 1.8rem;
+            letter-spacing: 1px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo i {
+            color: #ffd966;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            padding: 0.5rem 0;
+            border-bottom: 3px solid transparent;
+            transition: 0.3s;
+        }
+
+        .nav-menu a:hover {
+            border-bottom-color: #ffd966;
+            color: #ffd966;
+        }
+
+        /* ===== HERO / SELAMAT DATANG ===== */
+        .hero {
+            background: linear-gradient(rgba(0, 30, 0, 0.6), rgba(0, 20, 0, 0.5)), url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=2070&auto=format&fit=crop') no-repeat center center/cover;
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 2rem;
+        }
+
+        .hero-content h2 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            text-shadow: 3px 3px 10px rgba(0,0,0,0.7);
+            animation: fadeInDown 1.2s ease;
+        }
+
+        .hero-content p {
+            font-size: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+            animation: fadeInUp 1.2s ease;
+        }
+
+        .btn-welcome {
+            background-color: #ffb347;
+            color: #1e3c1e;
+            border: none;
+            padding: 1rem 2.5rem;
+            font-size: 1.3rem;
+            font-weight: bold;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: 0.3s;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-welcome:hover {
+            background-color: #ffa500;
+            transform: scale(1.05);
+        }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ===== SECTION UMUM ===== */
+        section {
+            padding: 4rem 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #1e3c1e;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 120px;
+            height: 4px;
+            background: #ffb347;
+            margin: 0.8rem auto 0;
+            border-radius: 4px;
+        }
+
+        /* ===== VIDEO PROMOSI ===== */
+        .video-section {
+            background-color: #e8f5e9;
+        }
+
+        .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .video-wrapper {
+            width: 100%;
+            max-width: 900px;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 20px 30px rgba(0,0,0,0.2);
+            border: 5px solid white;
+        }
+
+        .video-wrapper iframe {
+            width: 100%;
+            height: 500px;
+            display: block;
+            border: none;
+        }
+
+        /* ===== ALAMAT ===== */
+        .alamat-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            background: white;
+            border-radius: 30px;
+            padding: 2rem;
+            box-shadow: 0 10px 25px rgba(0,40,0,0.08);
+            align-items: center;
+        }
+
+        .alamat-info {
+            flex: 1;
+            min-width: 280px;
+        }
+
+        .alamat-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: #2e7d32;
+        }
+
+        .alamat-info p {
+            font-size: 1.2rem;
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .alamat-info i {
+            color: #ffb347;
+            width: 28px;
+            font-size: 1.4rem;
+        }
+
+        .map-placeholder {
+            flex: 1;
+            min-width: 280px;
+            height: 220px;
+            background: #c8e6c9;
+            border-radius: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.2rem;
+            color: #1e3c1e;
+            border: 2px dashed #2e7d32;
+        }
+
+        /* ===== TIKET & CARA PESAN ===== */
+        .tiket-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .tiket-card {
+            background: white;
+            border-radius: 24px;
+            padding: 2rem 1.5rem;
+            text-align: center;
+            box-shadow: 0 12px 20px rgba(0,40,0,0.08);
+            transition: 0.3s;
+            border-top: 8px solid #ffb347;
+        }
+
+        .tiket-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 30px rgba(0,60,0,0.15);
+        }
+
+        .tiket-card i {
+            font-size: 2.8rem;
+            color: #2e7d32;
+            margin-bottom: 1rem;
+        }
+
+        .tiket-card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .tiket-card .price {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #1e3c1e;
+            margin: 1rem 0;
+        }
+
+        .tiket-card .price span {
+            font-size: 1rem;
+            font-weight: normal;
+            color: #666;
+        }
+
+        .cara-pesan {
+            background: #d0e8d0;
+            border-radius: 30px;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+        .cara-pesan h3 {
+            font-size: 1.9rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #1e3c1e;
+        }
+
+        .steps {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+        }
+
+        .step-item {
+            flex: 1;
+            min-width: 180px;
+            background: white;
+            border-radius: 20px;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.05);
+        }
+
+        .step-number {
+            background: #ffb347;
+            color: #1e3c1e;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.5rem;
+            margin: 0 auto 1rem;
+        }
+
+        /* ===== KONTAK & FORM ===== */
+        .kontak-form-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 3rem;
+            background: white;
+            border-radius: 30px;
+            padding: 2.5rem;
+            box-shadow: 0 15px 30px rgba(0,40,0,0.1);
+        }
+
+        .kontak-info h3 {
+            font-size: 1.9rem;
+            margin-bottom: 1.5rem;
+            color: #1e3c1e;
+        }
+
+        .kontak-item {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+        }
+
+        .kontak-item i {
+            width: 45px;
+            height: 45px;
+            background: #e8f5e9;
+            color: #2e7d32;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+        }
+
+        .form-pesan h3 {
+            font-size: 1.9rem;
+            margin-bottom: 1.5rem;
+            color: #1e3c1e;
+        }
+
+        .form-group {
+            margin-bottom: 1.3rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #1e3c1e;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.9rem 1rem;
+            border: 2px solid #c8e6c9;
+            border-radius: 14px;
+            font-size: 1rem;
+            transition: 0.2s;
+            background: #f9fff9;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: #ffb347;
+            outline: none;
+            box-shadow: 0 0 0 4px rgba(255,180,71,0.2);
+        }
+
+        .btn-submit {
+            background: #2e7d32;
+            color: white;
+            border: none;
+            padding: 1rem 2.5rem;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: 0.3s;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .btn-submit:hover {
+            background: #1e3c1e;
+            transform: scale(1.02);
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: #1e3c1e;
+            color: #ddd;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+        footer i {
+            color: #ffb347;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 900px) {
+            .kontak-form-wrapper {
+                grid-template-columns: 1fr;
+            }
+            .hero-content h2 {
+                font-size: 2.8rem;
+            }
+        }
+
+        @media (max-width: 700px) {
+            header {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            .nav-menu {
+                justify-content: center;
+                gap: 1rem;
+            }
+            .hero-content h2 {
+                font-size: 2.2rem;
+            }
+            .hero-content p {
+                font-size: 1.2rem;
+            }
+            section {
+                padding: 3rem 5%;
+            }
+            .video-wrapper iframe {
+                height: 280px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER & MENU BAR (di kanan) -->
+    <header>
+        <div class="logo">
+            <h1><i class="fas fa-leaf"></i> Pesona Alam Lestari</h1>
+        </div>
+        <nav class="nav-menu">
+            <a href="#home">Beranda</a>
+            <a href="#video">Video</a>
+            <a href="#alamat">Alamat</a>
+            <a href="#tiket">Tiket</a>
+            <a href="#kontak">Kontak</a>
+            <a href="#pesan">Pesan</a>
+        </nav>
+    </header>
+
+    <!-- SELAMAT DATANG / HERO -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h2>Selamat Datang di Pesona Alam Lestari</h2>
+            <p>Jelajahi keindahan hutan tropis, air terjun tersembunyi, dan udara pegunungan yang menyegarkan. Nikmati petualangan alam yang tak terlupakan.</p>
+            <a href="#tiket" class="btn-welcome"><i class="fas fa-ticket-alt"></i> Pesan Tiket Sekarang</a>
+        </div>
+    </section>
+
+    <!-- VIDEO PROMOSI -->
+    <section id="video" class="video-section">
+        <h2 class="section-title">Video Promosi</h2>
+        <div class="video-container">
+            <div class="video-wrapper">
+                <!-- Video promosi wisata alam (YouTube embed) -->
+                <iframe src="https://www.youtube.com/embed/1La4QzGeaaQ?autoplay=1&mute=1&rel=0" title="Video Promosi Pesona Alam Lestari" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+        <p style="text-align: center; margin-top: 1.5rem; font-style: italic; color: #2e7d32;">*Nikmati keindahan alam dalam video promosi kami</p>
+    </section>
+
+    <!-- ALAMAT -->
+    <section id="alamat">
+        <h2 class="section-title">Lokasi Kami</h2>
+        <div class="alamat-container">
+            <div class="alamat-info">
+                <h3><i class="fas fa-map-pin"></i> Alamat Lengkap</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Jl. Raya Hutan Lindung No. 88, Desa Sukamaju, Kec. Cisarua, Kab. Bogor, Jawa Barat 16750</p>
+                <p><i class="fas fa-clock"></i> Buka Setiap Hari: 07.00 - 17.00 WIB</p>
+                <p><i class="fas fa-phone-alt"></i> (0251) 123-4567</p>
+                <p><i class="fas fa-envelope"></i> info@pesonaalamlestari.id</p>
+            </div>
+            <div class="map-placeholder">
+                <i class="fas fa-map" style="font-size: 3rem; margin-right: 10px;"></i> Peta Lokasi (Google Maps)
+            </div>
+        </div>
+    </section>
+
+    <!-- DAFTAR TIKET & CARA PESAN -->
+    <section id="tiket">
+        <h2 class="section-title">Daftar Tiket Masuk</h2>
+        <div class="tiket-grid">
+            <div class="tiket-card">
+                <i class="fas fa-child"></i>
+                <h3>Anak-anak</h3>
+                <div class="price">Rp 25.000 <span>/ orang</span></div>
+                <p>Usia 3-12 tahun</p>
+                <p><i class="fas fa-check-circle" style="color:#2e7d32;"></i> Akses semua area</p>
+            </div>
+            <div class="tiket-card">
+                <i class="fas fa-user"></i>
+                <h3>Dewasa</h3>
+                <div class="price">Rp 45.000 <span>/ orang</span></div>
+                <p>Usia 13-59 tahun</p>
+                <p><i class="fas fa-check-circle" style="color:#2e7d32;"></i> Akses semua area + guide</p>
+            </div>
+            <div class="tiket-card">
+                <i class="fas fa-users"></i>
+                <h3>Keluarga</h3>
+                <div class="price">Rp 120.000 <span>/ 4 orang</span></div>
+                <p>2 Dewasa + 2 Anak</p>
+                <p><i class="fas fa-check-circle" style="color:#2e7d32;"></i> Gratis 1 foto cetak</p>
+            </div>
+            <div class="tiket-card">
+                <i class="fas fa-camera"></i>
+                <h3>Paket Camping</h3>
+                <div class="price">Rp 250.000 <span>/ tenda</span></div>
+                <p>2 hari 1 malam</p>
+                <p><i class="fas fa-check-circle" style="color:#2e7d32;"></i> Api unggun + sarapan</p>
+            </div>
+        </div>
+
+        <!-- CARA PEMESANAN -->
+        <div class="cara-pesan">
+            <h3><i class="fas fa-clipboard-list"></i> Cara Memesan Tiket</h3>
+            <div class="steps">
+                <div class="step-item">
+                    <div class="step-number">1</div>
+                    <h4>Isi Formulir</h4>
+                    <p>Lengkapi form pemesanan di bawah dengan data diri dan jumlah tiket.</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">2</div>
+                    <h4>Konfirmasi</h4>
+                    <p>Tim kami akan menghubungi via WhatsApp/email dalam 1x24 jam.</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">3</div>
+                    <h4>Pembayaran</h4>
+                    <p>Transfer ke rekening resmi atau bayar di tempat (minimal DP 50%).</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">4</div>
+                    <h4>E-Tiket</h4>
+                    <p>E-tiket dikirim, tunjukkan saat tiba di lokasi wisata.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- KONTAK & FORM PESAN TIKET -->
+    <section id="kontak">
+        <h2 class="section-title">Kontak & Form Pemesanan</h2>
+        <div class="kontak-form-wrapper" id="pesan">
+            <!-- Kontak -->
+            <div class="kontak-info">
+                <h3><i class="fas fa-headset"></i> Hubungi Kami</h3>
+                <div class="kontak-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <div>
+                        <strong>Telepon/WhatsApp</strong><br>
+                        0812-3456-7890 (Admin 1)<br>
+                        0813-9876-5432 (Admin 2)
+                    </div>
+                </div>
+                <div class="kontak-item">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <strong>Email</strong><br>
+                        reservasi@pesonaalamlestari.id
+                    </div>
+                </div>
+                <div class="kontak-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <strong>Alamat</strong><br>
+                        Jl. Raya Hutan Lindung No. 88, Cisarua, Bogor
+                    </div>
+                </div>
+                <div class="kontak-item">
+                    <i class="fas fa-clock"></i>
+                    <div>
+                        <strong>Jam Operasional</strong><br>
+                        Senin - Minggu: 07.00 - 17.00 WIB
+                    </div>
+                </div>
+            </div>
+
+            <!-- Form Pesan Tiket -->
+            <div class="form-pesan">
+                <h3><i class="fas fa-ticket-alt"></i> Form Pesan Tiket</h3>
+                <form id="ticketForm" onsubmit="pesanTiket(event)">
+                    <div class="form-group">
+                        <label for="nama">Nama Lengkap</label>
+                        <input type="text" id="nama" placeholder="Masukkan nama lengkap" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" placeholder="contoh@email.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="telepon">No. WhatsApp/Telepon</label>
+                        <input type="tel" id="telepon" placeholder="0812xxxxxxx" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="jenis">Jenis Tiket</label>
+                        <select id="jenis" required>
+                            <option value="">-- Pilih Jenis Tiket --</option>
+                            <option value="Anak-anak">Anak-anak - Rp 25.000</option>
+                            <option value="Dewasa">Dewasa - Rp 45.000</option>
+                            <option value="Keluarga">Keluarga - Rp 120.000</option>
+                            <option value="Camping">Paket Camping - Rp 250.000</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="jumlah">Jumlah Tiket</label>
+                        <input type="number" id="jumlah" min="1" value="1" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="tanggal">Tanggal Kunjungan</label>
+                        <input type="date" id="tanggal" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="pesan_tambahan">Pesan Tambahan (Opsional)</label>
+                        <textarea id="pesan_tambahan" rows="3" placeholder="Contoh: butuh guide, rombongan, dll."></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit"><i class="fas fa-paper-plane"></i> Kirim Pesanan</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p><i class="fas fa-leaf"></i> Pesona Alam Lestari &copy; 2025 - Jelajahi Alam, Lestarikan Bumi</p>
+        <p style="margin-top: 0.5rem; font-size: 0.9rem;">Alamat: Jl. Raya Hutan Lindung No. 88, Cisarua, Bogor | Telp: (0251) 123-4567</p>
+    </footer>
+
+    <!-- SCRIPT SEDERHANA UNTUK NOTIFIKASI FORM -->
+    <script>
+        function pesanTiket(event) {
+            event.preventDefault();
+
+            // Ambil nilai input
+            const nama = document.getElementById('nama').value.trim();
+            const jenis = document.getElementById('jenis').value;
+            const jumlah = document.getElementById('jumlah').value;
+            const tanggal = document.getElementById('tanggal').value;
+
+            if (!nama || !jenis || !jumlah || !tanggal) {
+                alert('Mohon lengkapi semua data yang wajib diisi!');
+                return;
+            }
+
+            // Tampilkan pesan sukses
+            alert(`Terima kasih, ${nama}!\n\nPesanan tiket Anda:\nJenis: ${jenis}\nJumlah: ${jumlah} tiket\nTanggal: ${tanggal}\n\nTim kami akan segera menghubungi Anda untuk konfirmasi pembayaran.`);
+
+            // Reset form
+            document.getElementById('ticketForm').reset();
+
+            // (Opsional) bisa arahkan ke WhatsApp atau email
+            // window.location.href = 'mailto:reservasi@pesonaalamlestari.id?subject=Pesanan Tiket...';
+        }
+
+        // Set tanggal minimal hari ini
+        const today = new Date().toISOString().split('T')[0];
+        document.getElementById('tanggal').setAttribute('min', today);
+    </script>
+
+</body>
+</html>
